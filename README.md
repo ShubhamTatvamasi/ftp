@@ -13,5 +13,6 @@ docker run -d -v ${PWD}:/home/vsftpd \
   -e FTP_PASS=admin \
   -e PASV_ADDRESS=192.168.0.109 \
   --name ftp \
-  --restart=always bogem/ftp
+  --restart=always \
+  bogem/ftp
 ```
