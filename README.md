@@ -16,3 +16,4 @@ docker run -d -v ${PWD}:/home/vsftpd \
   --restart=always \
   bogem/ftp
 ```
+> NOTE: change the IP of `PASV_ADDRESS` variable
