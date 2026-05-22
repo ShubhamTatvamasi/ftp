@@ -23,6 +23,10 @@ http://192.168.1.8:8080/web/admin/login
 
 http://192.168.1.8:8080/web/client/login
 
+```bash
+docker rm -f sftpgo
+```
+
 ---
 
 check your local IP address:
