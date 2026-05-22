@@ -8,7 +8,7 @@ docker run -d \
   -p 21:21 \
   -p 51000-51100:51000-51100 \
   -v $(pwd):/data \
-  -v $(pwd)/sftpgo-data:/var/lib/sftpgo \
+  -v $(pwd)/sftpgo:/var/lib/sftpgo \
   -e SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN=true \
   -e SFTPGO_DEFAULT_ADMIN_USERNAME=admin \
   -e SFTPGO_DEFAULT_ADMIN_PASSWORD=admin \
