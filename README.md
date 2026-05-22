@@ -1,5 +1,33 @@
 # ftp
 
+
+```bash
+docker run -d \
+  --name sftpgo \
+  -p 8080:8080 \
+  -p 21:21 \
+  -p 51000-51100:51000-51100 \
+  -v $(pwd):/data \
+  -v $(pwd)/sftpgo-data:/var/lib/sftpgo \
+  -e SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN=true \
+  -e SFTPGO_DEFAULT_ADMIN_USERNAME=admin \
+  -e SFTPGO_DEFAULT_ADMIN_PASSWORD=admin123 \
+  -e SFTPGO_FTPD__BINDINGS__0__PORT=21 \
+  -e SFTPGO_FTPD__PASSIVE_PORT_RANGE__START=51000 \
+  -e SFTPGO_FTPD__PASSIVE_PORT_RANGE__END=51100 \
+  -e SFTPGO_FTPD__FORCE_PASSIVE_IP=YOUR_SERVER_IP \
+  drakkan/sftpgo:latest
+```
+
+http://192.168.1.8:8080/web/admin/login
+
+http://192.168.1.8:8080/web/client/login
+
+
+http://192.168.1.8:8080/web/admin/users
+
+---
+
 check your local IP address:
 ```bash
 ip addr
