@@ -12,6 +12,8 @@ docker run -d \
   -v "$(pwd)/ftp-data:/ftp/admin" \
   -e USERS="admin|admin123|/ftp/admin" \
   -e ADDRESS="$(ipconfig getifaddr en0)" \
+  -e MIN_PORT=21000 \
+  -e MAX_PORT=21010 \
   --restart unless-stopped \
   delfer/alpine-ftp-server
 ```
