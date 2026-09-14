@@ -19,9 +19,9 @@ docker run -d \
   drakkan/sftpgo:latest
 ```
 
-http://192.168.1.8:8080/web/admin/login
+http://192.168.1.7:8080/web/admin/login
 
-http://192.168.1.8:8080/web/client/login
+http://192.168.1.7:8080/web/client/login
 
 ```bash
 docker rm -f sftpgo
