@@ -1,5 +1,22 @@
 # ftp
 
+```bash
+mkdir -p ./ftp-data
+```
+
+```bash
+docker run -d \
+  --name proftpd \
+  -p 21:21 \
+  -p 21000-21010:21000-21010 \
+  -v "$(pwd)/ftp-data:/ftp/admin" \
+  -e USERS="admin|admin|/ftp/admin" \
+  -e ADDRESS="$(ipconfig getifaddr en0)" \
+  --restart unless-stopped \
+  delfer/alpine-ftp-server
+```
+
+---
 
 ```bash
 docker run -d \
