@@ -7,15 +7,15 @@ docker run -d \
   -p 8080:8080 \
   -p 21:21 \
   -p 51000-51100:51000-51100 \
-  -v $(pwd):/data \
-  -v $(pwd)/sftpgo:/var/lib/sftpgo \
+  -v "$(pwd)":/data \
+  -v "$(pwd)/sftpgo":/var/lib/sftpgo \
   -e SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN=true \
   -e SFTPGO_DEFAULT_ADMIN_USERNAME=admin \
   -e SFTPGO_DEFAULT_ADMIN_PASSWORD=admin \
   -e SFTPGO_FTPD__BINDINGS__0__PORT=21 \
   -e SFTPGO_FTPD__PASSIVE_PORT_RANGE__START=51000 \
   -e SFTPGO_FTPD__PASSIVE_PORT_RANGE__END=51100 \
-  -e SFTPGO_FTPD__FORCE_PASSIVE_IP=192.168.1.8 \
+  -e SFTPGO_FTPD__FORCE_PASSIVE_IP="$(ipconfig getifaddr en0)" \
   drakkan/sftpgo:latest
 ```
 
