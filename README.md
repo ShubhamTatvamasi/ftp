@@ -1,6 +1,24 @@
 # ftp
 
 ```bash
+mkdir -p ./ftp-data && \
+docker run -d \
+  --name vsftpd \
+  -p 21:21 \
+  -p 21000-21010:21000-21010 \
+  -v "$(pwd)/ftp-data:/home/ftpuser" \
+  -e FTP_USER=ftpuser \
+  -e FTP_PASS=admin123 \
+  -e PASV_ADDRESS="$(ipconfig getifaddr en0)" \
+  -e PASV_MIN_PORT=21000 \
+  -e PASV_MAX_PORT=21010 \
+  --restart unless-stopped \
+  fauria/vsftpd
+```
+
+---
+
+```bash
 mkdir -p ./ftp-data
 ```
 
