@@ -10,7 +10,7 @@ docker run -d \
   -p 21:21 \
   -p 21000-21010:21000-21010 \
   -v "$(pwd)/ftp-data:/ftp/admin" \
-  -e USERS="admin|admin123|/ftp/admin" \
+  -e USERS="admin|supersaver|/ftp/admin" \
   -e ADDRESS="$(ipconfig getifaddr en0)" \
   -e MIN_PORT=21000 \
   -e MAX_PORT=21010 \
